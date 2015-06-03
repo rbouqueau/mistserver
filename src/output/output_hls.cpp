@@ -65,7 +65,7 @@ namespace Mist {
         
     std::deque<std::string> lines;
     for (std::deque<DTSC::Fragment>::iterator it = myMeta.tracks[tid].fragments.begin(); it != myMeta.tracks[tid].fragments.end(); it++){
-      long long int starttime = myMeta.tracks[tid].getKey(it->getNumber()).getTime();
+      long long starttime = myMeta.tracks[tid].getKey(it->getNumber()).getTime();
       std::stringstream line;
       long long duration = it->getDuration();
       if (duration <= 0){
@@ -220,7 +220,7 @@ namespace Mist {
 
       unsigned int fragCounter = myMeta.tracks[vidTrack].missedFrags;
       for (std::deque<DTSC::Fragment>::iterator it = myMeta.tracks[vidTrack].fragments.begin(); it != myMeta.tracks[vidTrack].fragments.end(); it++){
-        long long int starttime = myMeta.tracks[vidTrack].getKey(it->getNumber()).getTime();        
+        long long starttime = myMeta.tracks[vidTrack].getKey(it->getNumber()).getTime();        
         if (starttime <= from && starttime + it->getDuration() > from){
           EXTREME_MSG("setting continuity counter for PAT/PMT to %d",fragCounter);
           contCounters[0]=fragCounter;     //PAT continuity counter

@@ -323,8 +323,8 @@ namespace DTSC {
       bool vod;
       bool live;
       bool merged;
-      long long int moreheader;
-      long long int bufferWindow;
+      long long moreheader;
+      long long bufferWindow;
   };
 
   /// A simple wrapper class that will open a file and allow easy reading/writing of DTSC data from/to it.
@@ -337,9 +337,9 @@ namespace DTSC {
       operator bool() const;
       ~File();
       Meta & getMeta();
-      long long int getLastReadPos();
+      long long getLastReadPos();
       bool writeHeader(std::string & header, bool force = false);
-      long long int addHeader(std::string & header);
+      long long addHeader(std::string & header);
       long int getBytePosEOF();
       long int getBytePos();
       bool reachedEOF();
@@ -361,8 +361,8 @@ namespace DTSC {
       JSON::Value metaStorage;
       Meta metadata;
       std::map<unsigned int, std::string> trackMapping;
-      long long int currtime;
-      long long int lastreadpos;
+      long long currtime;
+      long long lastreadpos;
       int currframe;
       FILE * F;
       unsigned long headerSize;

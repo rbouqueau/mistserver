@@ -7,6 +7,9 @@
 
 #if defined(__CYGWIN__) || defined(_WIN32)
 #include <windows.h>
+#ifndef __CYGWIN__
+#define mode_t int
+#endif
 #else
 #include <semaphore.h>
 #endif
@@ -20,16 +23,16 @@ namespace IPC {
   class statExchange {
     public:
       statExchange(char * _data);
-      void now(long long int time);
-      long long int now();
+      void now(long long time);
+      long long now();
       void time(long time);
       long time();
       void lastSecond(long time);
       long lastSecond();
-      void down(long long int bytes);
-      long long int down();
-      void up(long long int bytes);
-      long long int up();
+      void down(long long bytes);
+      long long down();
+      void up(long long bytes);
+      long long up();
       void host(std::string name);
       std::string host();
       void streamName(std::string name);
@@ -105,7 +108,7 @@ namespace IPC {
       ///\brief The name of the opened shared file
       std::string name;
       ///\brief The size in bytes of the opened shared file
-      long long int len;
+      long long len;
       ///\brief Whether this class should unlink the shared file upon deletion or not
       bool master;
       ///\brief A pointer to the payload of the file file
@@ -143,7 +146,7 @@ namespace IPC {
     ///\brief The name of the opened shared memory page
     std::string name;
     ///\brief The size in bytes of the opened shared memory page
-    long long int len;
+    long long len;
     ///\brief Whether this class should unlink the shared memory upon deletion or not
     bool master;
     ///\brief A pointer to the payload of the page

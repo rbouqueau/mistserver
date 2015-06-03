@@ -232,7 +232,7 @@ namespace Controller {
           }
           continue;
         }
-        long long int i;
+        long long i;
         if (sscanf(line, "MemTotal : %lli kB", &i) == 1){
           capa["mem"]["total"] = i / 1024;
         }
@@ -264,9 +264,9 @@ namespace Controller {
       //parse lines here
       float onemin, fivemin, fifteenmin;
       if (sscanf(line, "%f %f %f", &onemin, &fivemin, &fifteenmin) == 3){
-        capa["load"]["one"] = (long long int)(onemin * 100);
-        capa["load"]["five"] = (long long int)(fivemin * 100);
-        capa["load"]["fifteen"] = (long long int)(fifteenmin * 100);
+        capa["load"]["one"] = (long long)(onemin * 100);
+        capa["load"]["five"] = (long long)(fivemin * 100);
+        capa["load"]["fifteen"] = (long long)(fifteenmin * 100);
       }
     }
 

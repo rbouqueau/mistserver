@@ -8,7 +8,7 @@ namespace Controller {
   void AddStreams(JSON::Value & in, JSON::Value & out);
 
   struct liveCheck {
-    long long int lastms;
-    long long int last_active;
+    long long lastms;
+    long long last_active;
   };
 } //Controller namespace

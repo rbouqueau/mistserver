@@ -9,6 +9,7 @@
 #ifndef _WIN32
 #include <netdb.h>
 #endif
+#include <algorithm>
 #include <sstream>
 #include <cstdlib>
 

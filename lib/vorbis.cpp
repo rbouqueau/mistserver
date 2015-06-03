@@ -269,10 +269,10 @@ namespace vorbis{
         }
         case 1:{
           long long unsigned int floorPartitions = stream.get(5);
-          long long int max = -1;
+          long long max = -1;
           std::deque<int> partition_class;
           for (unsigned int o = 0; o < floorPartitions; o++){
-            long long int temp = stream.get(4);
+            long long temp = stream.get(4);
             partition_class.push_back(temp);
             if (temp>max) max = temp;
           }

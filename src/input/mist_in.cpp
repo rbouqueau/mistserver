@@ -4,9 +4,9 @@
 #include <fcntl.h> 
 #ifndef _WIN32
 #include <sys/wait.h>
-#endif
 #include <unistd.h>
 #include <semaphore.h>
+#endif
 
 #include INPUTTYPE 
 #include <mist/config.h>

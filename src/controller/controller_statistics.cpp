@@ -469,7 +469,7 @@ bool Controller::hasViewers(std::string streamName){
 void Controller::fillClients(JSON::Value & req, JSON::Value & rep){
   tthread::lock_guard<tthread::mutex> guard(statsMutex);
   //first, figure out the timestamp wanted
-  long long int reqTime = 0;
+  long long reqTime = 0;
   if (req.isMember("time")){
     reqTime = req["time"].asInt();
   }
@@ -615,8 +615,8 @@ class totalsData {
 void Controller::fillTotals(JSON::Value & req, JSON::Value & rep){
   tthread::lock_guard<tthread::mutex> guard(statsMutex);
   //first, figure out the timestamps wanted
-  long long int reqStart = 0;
-  long long int reqEnd = 0;
+  long long reqStart = 0;
+  long long reqEnd = 0;
   if (req.isMember("start")){
     reqStart = req["start"].asInt();
   }

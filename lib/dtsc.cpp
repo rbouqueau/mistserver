@@ -3,6 +3,7 @@
 
 #include "dtsc.h"
 #include "defines.h"
+#include <io.h>
 #include <stdlib.h>
 #include <string.h> //for memcmp
 char DTSC::Magic_Header[] = "DTSC";
@@ -188,7 +189,7 @@ void DTSC::Stream::waitForMeta(Socket::Connection & sourceSocket, bool closeOnEr
   bool wasBlocking = sourceSocket.isBlocking();
   sourceSocket.setBlocking(false);
   //cancel the attempt after 5000 milliseconds
-  long long int start = Util::getMS();
+  long long start = Util::getMS();
   while (!metadata && sourceSocket.connected() && Util::getMS() - start < 3000) {
     //we have data? attempt to read header
     if (sourceSocket.Received().size()) {
@@ -223,7 +224,7 @@ void DTSC::Stream::waitForPause(Socket::Connection & sourceSocket) {
   bool wasBlocking = sourceSocket.isBlocking();
   sourceSocket.setBlocking(false);
   //cancel the attempt after 5000 milliseconds
-  long long int start = Util::getMS();
+  long long start = Util::getMS();
   while (lastType() != DTSC::PAUSEMARK && sourceSocket.connected() && Util::getMS() - start < 5000) {
     //we have data? parse it
     if (sourceSocket.Received().size()) {
@@ -673,9 +674,9 @@ bool DTSC::File::writeHeader(std::string & header, bool force) {
 
 /// Adds the given string as a new header to the end of the file.
 /// \returns The positon the header was written at, or 0 on failure.
-long long int DTSC::File::addHeader(std::string & header) {
+long long DTSC::File::addHeader(std::string & header) {
   fseek(F, 0, SEEK_END);
-  long long int writePos = ftell(F);
+  long long writePos = ftell(F);
   int hSize = htonl(header.size());
   int ret = fwrite(DTSC::Magic_Header, 4, 1, F); //write header
   if (ret != 1) {
@@ -941,7 +942,7 @@ void DTSC::File::parseNext(){
 }
 
 /// Returns the byte positon of the start of the last packet that was read.
-long long int DTSC::File::getLastReadPos() {
+long long DTSC::File::getLastReadPos() {
   return lastreadpos;
 }
 
@@ -1066,7 +1067,7 @@ bool DTSC::File::atKeyframe() {
   if (myPack.getFlag("keyframe")) {
     return true;
   }
-  long long int bTime = myPack.getTime();
+  long long bTime = myPack.getTime();
   DTSC::Track & trackRef = metadata.tracks[myPack.getTrackId()];
   for (unsigned int i = 0; i < trackRef.keys.size(); i++) {
     if (trackRef.keys[i].getTime() >= bTime) {

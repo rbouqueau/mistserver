@@ -23,6 +23,8 @@
 #include <stdio.h>
 #ifndef _WIN32
 #include <unistd.h>
+#else
+#include <process.h>
 #endif
 #include "config.h"
 static const char * DBG_LVL_LIST[] = {"NONE", "FAIL", "ERROR", "WARN", "INFO", "MEDIUM", "HIGH", "VERYHIGH", "EXTREME", "INSANE", "DONTEVEN"};

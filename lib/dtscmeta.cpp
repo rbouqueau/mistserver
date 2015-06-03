@@ -1138,7 +1138,7 @@ namespace DTSC {
   }
 
   unsigned int Track::timeToFragnum(unsigned int timestamp){
-    unsigned long long int totalTime = firstms;
+    unsigned long long totalTime = firstms;
     for (unsigned int i = 0; i<fragments.size(); i++){
       if (timestamp <= totalTime){
         return i;
@@ -1327,7 +1327,7 @@ namespace DTSC {
   }
 
   ///\brief Converts a long long to a char*
-  char * convertLongLong(long long int input) {
+  char * convertLongLong(long long input) {
     static char result[8];
     result[0] = (input >> 56) & 0xFF;
     result[1] = (input >> 48) & 0xFF;

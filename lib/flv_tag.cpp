@@ -6,7 +6,9 @@
 #include "flv_tag.h"
 #include "timing.h"
 #include <stdio.h> //for Tag::FileLoader
+#ifndef _WIN32
 #include <unistd.h> //for Tag::FileLoader
+#endif
 #include <fcntl.h> //for Tag::FileLoader
 #include <stdlib.h> //malloc
 #include <string.h> //memcpy
@@ -1042,18 +1044,18 @@ JSON::Value FLV::Tag::toJSON(DTSC::Meta & metadata) {
     }
     if (tmp) {
       if (tmp->getContentP("width")) {
-        metadata.tracks[1].width = (long long int)tmp->getContentP("width")->NumValue();
+        metadata.tracks[1].width = (long long)tmp->getContentP("width")->NumValue();
       } else {
         metadata.tracks[1].width = 0;
       }
       if (tmp->getContentP("height")) {
-        metadata.tracks[1].height = (long long int)tmp->getContentP("height")->NumValue();
+        metadata.tracks[1].height = (long long)tmp->getContentP("height")->NumValue();
       } else {
         metadata.tracks[1].height = 0;
       }
       if (tmp->getContentP("videoframerate")) {
         if (tmp->getContentP("videoframerate")->NumValue()){
-          metadata.tracks[1].fpks = (long long int)(tmp->getContentP("videoframerate")->NumValue() * 1000.0);
+          metadata.tracks[1].fpks = (long long)(tmp->getContentP("videoframerate")->NumValue() * 1000.0);
         }else{
           metadata.tracks[1].fpks = JSON::Value(tmp->getContentP("videoframerate")->StrValue()).asInt() * 1000.0;
         }
@@ -1061,22 +1063,22 @@ JSON::Value FLV::Tag::toJSON(DTSC::Meta & metadata) {
         metadata.tracks[1].fpks = 0;
       }
       if (tmp->getContentP("videodatarate")) {
-        metadata.tracks[1].bps = (long long int)(tmp->getContentP("videodatarate")->NumValue() * 1024) / 8;
+        metadata.tracks[1].bps = (long long)(tmp->getContentP("videodatarate")->NumValue() * 1024) / 8;
       } else {
         metadata.tracks[1].bps = 0;
       }
       if (tmp->getContentP("audiodatarate")) {
-        metadata.tracks[2].bps = (long long int)(tmp->getContentP("audiodatarate")->NumValue() * 1024) / 8;
+        metadata.tracks[2].bps = (long long)(tmp->getContentP("audiodatarate")->NumValue() * 1024) / 8;
       } else {
         metadata.tracks[2].bps = 0;
       }
       if (tmp->getContentP("audiosamplerate")) {
-        metadata.tracks[2].rate = (long long int)tmp->getContentP("audiosamplerate")->NumValue();
+        metadata.tracks[2].rate = (long long)tmp->getContentP("audiosamplerate")->NumValue();
       } else {
         metadata.tracks[2].rate = 0;
       }
       if (tmp->getContentP("audiosamplesize")) {
-        metadata.tracks[2].size = (long long int)tmp->getContentP("audiosamplesize")->NumValue();
+        metadata.tracks[2].size = (long long)tmp->getContentP("audiosamplesize")->NumValue();
       } else {
         metadata.tracks[2].size = 0;
       }

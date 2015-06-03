@@ -45,8 +45,8 @@ namespace Mist {
     unsigned int moovOffset = 0;
     {
       //calculating longest duration
-      long long int firstms = -1;
-      long long int lastms = -1;
+      long long firstms = -1;
+      long long lastms = -1;
       for (std::set<long unsigned int>::iterator it = selectedTracks.begin(); it != selectedTracks.end(); it++) {
         if (lastms == -1 || lastms < (long long)myMeta.tracks[*it].lastms){
           lastms = myMeta.tracks[*it].lastms;
@@ -239,7 +239,7 @@ namespace Mist {
       moovBox.setContent(trakBox, moovOffset++);
     }//for each selected track
     //initial offset length ftyp, length moov + 8
-    unsigned long long int byteOffset = ftypBox.boxedSize() + moovBox.boxedSize() + 8;
+    unsigned long long byteOffset = ftypBox.boxedSize() + moovBox.boxedSize() + 8;
     //update all STCO or CO64 from the following maps;
     std::map <long unsigned, MP4::STCO> checkStcoBoxes;
     std::map <long unsigned, MP4::CO64> checkCO64Boxes;

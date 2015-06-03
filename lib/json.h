@@ -33,7 +33,7 @@ namespace JSON {
   class Value {
     private:
       ValueType myType;
-      long long int intVal;
+      long long intVal;
       std::string strVal;
       std::deque<Value*> arrVal;
       std::map<std::string, Value> objVal;
@@ -45,7 +45,7 @@ namespace JSON {
       Value(std::istream & fromstream);
       Value(const std::string & val);
       Value(const char * val);
-      Value(long long int val);
+      Value(long long val);
       Value(bool val);
       //comparison operators
       bool operator==(const Value & rhs) const;
@@ -53,16 +53,16 @@ namespace JSON {
       //assignment operators
       Value & operator=(const std::string & rhs);
       Value & operator=(const char * rhs);
-      Value & operator=(const long long int & rhs);
+      Value & operator=(const long long & rhs);
       Value & operator=(const int & rhs);
       Value & operator=(const unsigned int & rhs);
       Value & operator=(const bool & rhs);
       //converts to basic types
-      operator long long int() const;
+      operator long long() const;
       operator std::string() const;
       operator bool() const;
       const std::string asString() const;
-      const long long int asInt() const;
+      const long long asInt() const;
       const bool asBool() const;
       const std::string & asStringRef() const;
       const char * c_str() const;
@@ -119,7 +119,7 @@ namespace JSON {
   std::string encodeVector(T begin, T end) {
     std::string result;
     for (T it = begin; it != end; it++) {
-      long long int tmp = (*it);
+      long long tmp = (*it);
       while (tmp >= 0xFFFF) {
         result += (char)0xFF;
         result += (char)0xFF;
@@ -149,7 +149,7 @@ namespace JSON {
   std::string encodeVector4(T begin, T end) {
     std::string result;
     for (T it = begin; it != end; it++) {
-      long long int tmp = (*it);
+      long long tmp = (*it);
       while (tmp >= 0xFFFFFFFF) {
         result += (char)0xFF;
         result += (char)0xFF;

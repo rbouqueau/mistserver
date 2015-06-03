@@ -4,11 +4,14 @@
 #include <sys/mman.h>
 #include <sys/sem.h>
 #endif
+#include <algorithm>
 #include <cerrno>
 #include <cstring>
 #include <cstdlib>
 #include <cstdio>
+#ifndef _WIN32
 #include <unistd.h>
+#endif
 #include <iostream>
 #include "defines.h"
 #include "shared_memory.h"
@@ -507,13 +510,13 @@ namespace IPC {
   statExchange::statExchange(char * _data) : data(_data) {}
 
   ///\brief Sets timestamp of the current stats
-  void statExchange::now(long long int time) {
+  void statExchange::now(long long time) {
     htobll(data, time);
   }
 
   ///\brief Gets timestamp of the current stats
-  long long int statExchange::now() {
-    long long int result;
+  long long statExchange::now() {
+    long long result;
     btohll(data, result);
     return result;
   }
@@ -543,25 +546,25 @@ namespace IPC {
   }
 
   ///\brief Sets the amount of bytes received
-  void statExchange::down(long long int bytes) {
+  void statExchange::down(long long bytes) {
     htobll(data + 16, bytes);
   }
 
   ///\brief Gets the amount of bytes received
-  long long int statExchange::down() {
-    long long int result;
+  long long statExchange::down() {
+    long long result;
     btohll(data + 16, result);
     return result;
   }
 
   ///\brief Sets the amount of bytes sent
-  void statExchange::up(long long int bytes) {
+  void statExchange::up(long long bytes) {
     htobll(data + 24, bytes);
   }
 
   ///\brief Gets the amount of bytes sent
-  long long int statExchange::up() {
-    long long int result;
+  long long statExchange::up() {
+    long long result;
     btohll(data + 24, result);
     return result;
   }

@@ -3,9 +3,14 @@
 
 #include <sys/stat.h>
 #include <sys/types.h>
+#ifndef _WIN32
 #include <unistd.h>
-#include <stdlib.h>
 #include <semaphore.h>
+#else
+#include <direct.h>
+#include <io.h>
+#endif
+#include <stdlib.h>
 #include "json.h"
 #include "stream.h"
 #include "procs.h"
@@ -115,7 +120,7 @@ bool Util::startInput(std::string streamname, std::string filename, bool forkFir
   
   std::string player_bin;
   bool selected = false;
-  long long int curPrio = -1;
+  long long curPrio = -1;
   //check in curConf for capabilities-inputs-<naam>-priority/source_match
   DTSC::Scan inputs = config.getMember("capabilities").getMember("inputs");
   DTSC::Scan input;

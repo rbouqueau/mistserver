@@ -11,7 +11,7 @@
 
 ///\todo Maybe move to util?
 long long unsigned int binToInt(std::string & binary) {
-  long long int result = 0;
+  long long result = 0;
   for (int i = 0; i < 8; i++) {
     result <<= 8;
     result += binary[i];
@@ -106,7 +106,7 @@ namespace Mist {
     Quality = Quality.substr(0, Quality.find(")"));
     std::string parseString = H.url.substr(H.url.find(")/") + 2);
     parseString = parseString.substr(parseString.find("(") + 1);
-    long long int seekTime = atoll(parseString.substr(0, parseString.find(")")).c_str()) / 10000;
+    long long seekTime = atoll(parseString.substr(0, parseString.find(")")).c_str()) / 10000;
     unsigned int tid = atoll(Quality.c_str());
     selectedTracks.clear();
     selectedTracks.insert(tid);
@@ -303,10 +303,10 @@ namespace Mist {
            "TimeScale=\"10000000\" ";
     std::deque<std::map<unsigned int, DTSC::Track>::iterator> audioIters;
     std::deque<std::map<unsigned int, DTSC::Track>::iterator> videoIters;
-    long long int maxWidth = 0;
-    long long int maxHeight = 0;
-    long long int minWidth = 99999999;
-    long long int minHeight = 99999999;
+    long long maxWidth = 0;
+    long long maxHeight = 0;
+    long long minWidth = 99999999;
+    long long minHeight = 99999999;
     for (std::map<unsigned int, DTSC::Track>::iterator it = myMeta.tracks.begin(); it != myMeta.tracks.end(); it++) {
       if (it->second.codec == "AAC") {
         audioIters.push_back(it);

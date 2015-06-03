@@ -60,7 +60,7 @@ namespace MP4 {
   }
 
   bool ABST::getLive() {
-    return (getInt8(8) & 0x10);
+    return (getInt8(8) & 0x10) != 0;
   }
 
   void ABST::setUpdate(bool newUpdate) {
@@ -69,7 +69,7 @@ namespace MP4 {
   }
 
   bool ABST::getUpdate() {
-    return (getInt8(8) & 0x08);
+    return (getInt8(8) & 0x08) != 0;
   }
 
   void ABST::setTimeScale(uint32_t newScale) {
@@ -751,7 +751,7 @@ namespace MP4 {
   }
 
   bool AFRA::getLongIDs() {
-    return getInt8(4) & 0x80;
+    return (getInt8(4) & 0x80) != 0;
   }
 
   void AFRA::setLongOffsets(bool newVal) {
@@ -763,7 +763,7 @@ namespace MP4 {
   }
 
   bool AFRA::getLongOffsets() {
-    return getInt8(4) & 0x40;
+    return (getInt8(4) & 0x40) != 0;
   }
 
   void AFRA::setGlobalEntries(bool newVal) {
@@ -775,7 +775,7 @@ namespace MP4 {
   }
 
   bool AFRA::getGlobalEntries() {
-    return getInt8(4) & 0x20;
+    return (getInt8(4) & 0x20) != 0;
   }
 
   void AFRA::setTimeScale(uint32_t newVal) {

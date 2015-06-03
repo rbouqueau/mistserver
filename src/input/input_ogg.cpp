@@ -17,15 +17,15 @@ namespace Mist {
 
   JSON::Value segment::toJSON(OGG::oggCodec myCodec){
     JSON::Value retval;
-    retval["time"] = (long long int)time;
-    retval["trackid"] = (long long int)tid;
+    retval["time"] = (long long)time;
+    retval["trackid"] = (long long)tid;
     std::string tmpString = "";
     for (unsigned int i = 0; i < parts.size(); i++){
       tmpString += parts[i];
     }
     retval["data"] = tmpString;
 //    INFO_MSG("Setting bpos for packet on track %llu, time %llu, to %llu", tid, time, bytepos);
-    retval["bpos"] = (long long int)bytepos;
+    retval["bpos"] = (long long)bytepos;
     if (myCodec == OGG::THEORA){
       if (!theora::isHeader(tmpString.data(), tmpString.size())){
         theora::header tmpHeader((char*)tmpString.data(), tmpString.size());
@@ -67,7 +67,7 @@ namespace Mist {
 
   ///\todo check if all trackID (tid) instances are replaced with bitstream serial numbers
   void inputOGG::parseBeginOfStream(OGG::Page & bosPage){
-    //long long int tid = snum2tid.size() + 1;
+    //long long tid = snum2tid.size() + 1;
     unsigned int tid = bosPage.getBitstreamSerialNumber();
     if (memcmp(bosPage.getSegment(0) + 1, "theora", 6) == 0){
       theora::header tmpHead((char*)bosPage.getSegment(0), bosPage.getSegmentLen(0));

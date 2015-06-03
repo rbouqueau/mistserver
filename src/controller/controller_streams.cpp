@@ -191,7 +191,7 @@ namespace Controller {
   ///\brief Checks all streams, restoring if needed.
   ///\param data The stream configuration for the server.
   void CheckAllStreams(JSON::Value & data){
-    long long int currTime = Util::epoch();
+    long long currTime = Util::epoch();
     for (JSON::ObjIter jit = data.ObjBegin(); jit != data.ObjEnd(); jit++){
       checkStream(jit->first, jit->second);
       if (!jit->second.isMember("name")){

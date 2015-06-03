@@ -2,7 +2,9 @@
 /// Contains generic function headers for managing processes.
 
 #pragma once
+#ifndef _WIN32
 #include <unistd.h>
+#endif
 #include <string>
 #include <set>
 #include <vector>

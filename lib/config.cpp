@@ -28,13 +28,15 @@
 #include <errno.h>
 #include <iostream>
 #include <signal.h>
+#ifndef _WIN32
 #include <sys/types.h>
 #include <unistd.h>
-#include <fcntl.h>
 #include <getopt.h>
+#include <dirent.h> //for getMyExec
+#endif
+#include <fcntl.h>
 #include <stdlib.h>
 #include <fstream>
-#include <dirent.h> //for getMyExec
 
 bool Util::Config::is_active = false;
 unsigned int Util::Config::printDebugLevel = DEBUG;//
@@ -107,7 +109,7 @@ void Util::Config::addOption(std::string optname, JSON::Value option) {
 /// Prints a usage message to the given output.
 void Util::Config::printHelp(std::ostream & output) {
   unsigned int longest = 0;
-  std::map<long long int, std::string> args;
+  std::map<long long, std::string> args;
   for (JSON::ObjIter it = vals.ObjBegin(); it != vals.ObjEnd(); it++) {
     unsigned int current = 0;
     if (it->second.isMember("long")) {
@@ -138,7 +140,7 @@ void Util::Config::printHelp(std::ostream & output) {
     }
   }
   output << "Usage: " << getString("cmd") << " [options]";
-  for (std::map<long long int, std::string>::iterator i = args.begin(); i != args.end(); i++) {
+  for (std::map<long long, std::string>::iterator i = args.begin(); i != args.end(); i++) {
     if (vals[i->second].isMember("value") && vals[i->second]["value"].size()) {
       output << " [" << i->second << "]";
     } else {
@@ -259,12 +261,12 @@ bool Util::Config::parseArgs(int & argc, char ** & argv) {
             if (it->second.isMember("arg")) {
               it->second["value"].append((std::string)optarg);
             } else {
-              it->second["value"].append((long long int)1);
+              it->second["value"].append((long long)1);
             }
             break;
           }
           if (it->second.isMember("short_off") && it->second["short_off"].asString()[0] == opt) {
-            it->second["value"].append((long long int)0);
+            it->second["value"].append((long long)0);
           }
         }
         break;
@@ -313,9 +315,9 @@ std::string Util::Config::getString(std::string optname) {
   return getOption(optname).asString();
 }
 
-/// Returns the current value of an option or default if none was set as a long long int.
+/// Returns the current value of an option or default if none was set as a long long.
 /// Calls getOption internally.
-long long int Util::Config::getInteger(std::string optname) {
+long long Util::Config::getInteger(std::string optname) {
   return getOption(optname).asInt();
 }
 

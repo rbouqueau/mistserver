@@ -1,6 +1,7 @@
 #include "nal.h"
 #include "bitstream.h"
 #include "defines.h"
+#include <algorithm>
 #include <iostream>
 #include <iomanip>
 #include <math.h>//for log

@@ -265,7 +265,7 @@ JSON::Value::Value(const char * val) {
 }
 
 /// Sets this JSON::Value to the given integer.
-JSON::Value::Value(long long int val) {
+JSON::Value::Value(long long val) {
   myType = INTEGER;
   intVal = val;
 }
@@ -335,7 +335,7 @@ JSON::Value & JSON::Value::operator=(const char * rhs) {
 }
 
 /// Sets this JSON::Value to the given integer.
-JSON::Value & JSON::Value::operator=(const long long int & rhs) {
+JSON::Value & JSON::Value::operator=(const long long & rhs) {
   null();
   myType = INTEGER;
   intVal = rhs;
@@ -344,16 +344,16 @@ JSON::Value & JSON::Value::operator=(const long long int & rhs) {
 
 /// Sets this JSON::Value to the given integer.
 JSON::Value & JSON::Value::operator=(const int & rhs) {
-  return ((*this) = (long long int)rhs);
+  return ((*this) = (long long)rhs);
 }
 
 /// Sets this JSON::Value to the given integer.
 JSON::Value & JSON::Value::operator=(const unsigned int & rhs) {
-  return ((*this) = (long long int)rhs);
+  return ((*this) = (long long)rhs);
 }
 
-/// Automatic conversion to long long int - returns 0 if not convertable.
-JSON::Value::operator long long int() const {
+/// Automatic conversion to long long - returns 0 if not convertable.
+JSON::Value::operator long long() const {
   if (myType == INTEGER) {
     return intVal;
   }
@@ -405,9 +405,9 @@ JSON::Value::operator bool() const {
 const std::string JSON::Value::asString() const {
   return (std::string) * this;
 }
-/// Explicit conversion to long long int.
-const long long int JSON::Value::asInt() const {
-  return (long long int) * this;
+/// Explicit conversion to long long.
+const long long JSON::Value::asInt() const {
+  return (long long) * this;
 }
 /// Explicit conversion to bool.
 const bool JSON::Value::asBool() const {
@@ -695,7 +695,7 @@ void JSON::Value::netPrepare() {
     }
     removeMember("trackid");
     packed = toPacked();
-    objVal["time"] = (long long int)time;
+    objVal["time"] = (long long)time;
     objVal["datatype"] = dataType;
     objVal["trackid"] = packID;
     strVal.resize(packed.size() + 20);
@@ -810,7 +810,7 @@ std::string JSON::Value::toPrettyString(int indentation) const {
     case STRING: {
         for (unsigned int i = 0; i < 201 && i < strVal.size(); ++i) {
           if (strVal[i] < 32 || strVal[i] > 126 || strVal.size() > 200) {
-            return "\"" + JSON::Value((long long int)strVal.size()).asString() + " bytes of data\"";
+            return "\"" + JSON::Value((long long)strVal.size()).asString() + " bytes of data\"";
           }
         }
         return string_escape(strVal);
@@ -1055,7 +1055,7 @@ void JSON::fromDTMI(const unsigned char * data, unsigned int len, unsigned int &
         tmpdbl[0] = data[i + 8];
         i += 9; //skip 8(an uint64_t)+1 forwards
         uint64_t * d = (uint64_t *)tmpdbl;
-        ret = (long long int) * d;
+        ret = (long long) * d;
         return;
         break;
       }
@@ -1137,8 +1137,8 @@ void JSON::fromDTMI2(const unsigned char * data, unsigned int len, unsigned int 
   if (len < 13) {
     return;
   }
-  long long int tmpTrackID = ntohl(((int *)(data + i))[0]);
-  long long int tmpTime = ntohl(((int *)(data + i))[1]);
+  long long tmpTrackID = ntohl(((int *)(data + i))[0]);
+  long long tmpTime = ntohl(((int *)(data + i))[1]);
   tmpTime <<= 32;
   tmpTime += ntohl(((int *)(data + i))[2]);
   i += 12;

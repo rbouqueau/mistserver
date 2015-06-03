@@ -110,9 +110,9 @@ namespace Mist {
       if (myMeta.tracks[tid].keys[0].getNumber() >= (++(bufferLocations[tid].begin()))->first || !config->is_active) {
         //Find page in indexpage and null it
         for (int i = 0; i < 8192; i += 8) {
-          unsigned int thisKeyNum = ((((long long int *)(metaPages[tid].mapped + i))[0]) >> 32) & 0xFFFFFFFF;
-          if (thisKeyNum == htonl(pagesByTrack[tid].begin()->first) && ((((long long int *)(metaPages[tid].mapped + i))[0]) != 0)) {
-            (((long long int *)(metaPages[tid].mapped + i))[0]) = 0;
+          unsigned int thisKeyNum = ((((long long *)(metaPages[tid].mapped + i))[0]) >> 32) & 0xFFFFFFFF;
+          if (thisKeyNum == htonl(pagesByTrack[tid].begin()->first) && ((((long long *)(metaPages[tid].mapped + i))[0]) != 0)) {
+            (((long long *)(metaPages[tid].mapped + i))[0]) = 0;
           }
         }
         DEBUG_MSG(DLVL_DEVEL, "Erasing track %d, keys %lu-%lu from buffer", tid, bufferLocations[tid].begin()->first, bufferLocations[tid].begin()->first + bufferLocations[tid].begin()->second.keyNum - 1);

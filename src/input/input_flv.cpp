@@ -67,7 +67,7 @@ namespace Mist {
     //Create header file from FLV data
     fseek(inFile, 13, SEEK_SET);
     FLV::Tag tmpTag;
-    long long int lastBytePos = 13;
+    long long lastBytePos = 13;
     while (!feof(inFile) && !FLV::Parse_Error){
       if (tmpTag.FileLoader(inFile)){
         lastPack.null();
@@ -90,7 +90,7 @@ namespace Mist {
   void inputFLV::getNext(bool smart) {
     static JSON::Value thisPack;
     thisPack.null();
-    long long int lastBytePos = ftell(inFile);
+    long long lastBytePos = ftell(inFile);
     FLV::Tag tmpTag;
     while (!feof(inFile) && !FLV::Parse_Error){
       if (tmpTag.FileLoader(inFile)){

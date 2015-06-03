@@ -1,8 +1,10 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#ifndef _WIN32
 #include <unistd.h>
 #include <semaphore.h>
+#endif
 #include <iterator> //std::distance
 
 #include <mist/stream.h>
@@ -14,13 +16,13 @@
 namespace Mist {
   JSON::Value Output::capa = JSON::Value();
 
-  int getDTSCLen(char * mapped, long long int offset){
+  int getDTSCLen(char * mapped, long long offset){
     return ntohl(((int*)(mapped + offset))[1]);
   }
 
-  unsigned long long getDTSCTime(char * mapped, long long int offset){
+  unsigned long long getDTSCTime(char * mapped, long long offset){
     char * timePoint = mapped + offset + 12;
-    return ((long long int)timePoint[0] << 56) | ((long long int)timePoint[1] << 48) | ((long long int)timePoint[2] << 40) | ((long long int)timePoint[3] << 32) | ((long long int)timePoint[4] << 24) | ((long long int)timePoint[5] << 16) | ((long long int)timePoint[6] << 8) | timePoint[7];
+    return ((long long)timePoint[0] << 56) | ((long long)timePoint[1] << 48) | ((long long)timePoint[2] << 40) | ((long long)timePoint[3] << 32) | ((long long)timePoint[4] << 24) | ((long long)timePoint[5] << 16) | ((long long)timePoint[6] << 8) | timePoint[7];
   }
 
   void Output::init(Util::Config * cfg){
@@ -249,7 +251,7 @@ namespace Mist {
     return keyNo;
   }
   
-  int Output::pageNumForKey(long unsigned int trackId, long long int keyNum){
+  int Output::pageNumForKey(long unsigned int trackId, long long keyNum){
     if (!metaPages.count(trackId)){
       char id[NAME_BUFFER_SIZE];
       snprintf(id, NAME_BUFFER_SIZE, SHM_TRACK_INDEX, streamName.c_str(), trackId);
@@ -268,7 +270,7 @@ namespace Mist {
     return -1;
   }
   
-  void Output::loadPageForKey(long unsigned int trackId, long long int keyNum){
+  void Output::loadPageForKey(long unsigned int trackId, long long keyNum){
     if (myMeta.vod && keyNum > myMeta.tracks[trackId].keys.rbegin()->getNumber()){
       curPage.erase(trackId);
       currKeyOpen.erase(trackId);
@@ -583,7 +585,7 @@ namespace Mist {
       return;
     }
     if (statsPage.getData()){
-      unsigned long long int now = Util::epoch();
+      unsigned long long now = Util::epoch();
       if (now != lastStats){
         lastStats = now;
         IPC::statExchange tmpEx(statsPage.getData());

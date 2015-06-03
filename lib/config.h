@@ -35,7 +35,7 @@ namespace Util {
       bool parseArgs(int & argc, char ** & argv);
       JSON::Value & getOption(std::string optname, bool asArray = false);
       std::string getString(std::string optname);
-      long long int getInteger(std::string optname);
+      long long getInteger(std::string optname);
       bool getBool(std::string optname);
       void activate();
       int threadServer(Socket::Server & server_socket, int (*callback)(Socket::Connection & S));

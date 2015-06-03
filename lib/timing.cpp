@@ -33,8 +33,8 @@ void Util::wait(int ms){
   if (ms > 600000) {
     ms = 600000;
   }
-  long long int start = getMS();
-  long long int now = start;
+  long long start = getMS();
+  long long now = start;
   while (now < start+ms){
     sleep(start+ms-now);
     now = getMS();
@@ -62,17 +62,17 @@ void Util::sleep(int ms) {
 long long Util::getNTP() {
   struct timespec t;
   clock_gettime(CLOCK_REALTIME, &t);
-  return ((((long long int)t.tv_sec) + 2208988800) << 32) + (t.tv_nsec * 4.2949);
+  return ((((long long)t.tv_sec) + 2208988800) << 32) + (t.tv_nsec * 4.2949);
 }
 
 /// Gets the current time in milliseconds.
-long long int Util::getMS() {
+long long Util::getMS() {
   struct timespec t;
   clock_gettime(CLOCK_REALTIME, &t);
-  return ((long long int)t.tv_sec) * 1000 + t.tv_nsec / 1000000;
+  return ((long long)t.tv_sec) * 1000 + t.tv_nsec / 1000000;
 }
 
-long long int Util::bootSecs() {
+long long Util::bootSecs() {
   struct timespec t;
   clock_gettime(CLOCK_MONOTONIC, &t);
   return t.tv_sec;
@@ -93,6 +93,6 @@ long long unsigned int Util::getMicros(long long unsigned int previous) {
 }
 
 /// Gets the amount of seconds since 01/01/1970.
-long long int Util::epoch() {
+long long Util::epoch() {
   return time(0);
 }

@@ -21,9 +21,9 @@ namespace Utils {
       bool peekOffset(size_t peekOffset);
       void flush();
       void clear();
-      long long int getExpGolomb();
+      long long getExpGolomb();
       long long unsigned int getUExpGolomb();
-      long long int peekExpGolomb();
+      long long peekExpGolomb();
       long long unsigned int peekUExpGolomb();
     private:
       bool checkBufferSize(unsigned int size);

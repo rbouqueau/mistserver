@@ -60,7 +60,7 @@ namespace Mist {
       //SetVar(urlunescape(varname), urlunescape(varval));
 
       if (varname == "track"){
-        long long int selTrack = JSON::Value(varval).asInt();
+        long long selTrack = JSON::Value(varval).asInt();
         if (myMeta){
           if (myMeta.tracks.count(selTrack)){
             std::string & delThis = myMeta.tracks[selTrack].type;
@@ -601,7 +601,7 @@ namespace Mist {
       amfReply.getContentP(3)->addContent(AMF::Object("details", "DDV"));
       amfReply.getContentP(3)->addContent(AMF::Object("clientid", (double)1337));
       sendCommand(amfReply, playMessageType, playStreamId);
-      seek((long long int)amfData.getContentP(3)->NumValue());
+      seek((long long)amfData.getContentP(3)->NumValue());
 
       //send a status reply
       AMF::Object amfreply("container", AMF::AMF0_DDV_CONTAINER);

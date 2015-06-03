@@ -1,4 +1,6 @@
+#ifndef _WIN32
 #include <semaphore.h>
+#endif
 #include <fcntl.h>
 #include <sys/stat.h>
 
@@ -126,7 +128,7 @@ namespace Mist {
         DTSC::Meta newMeta = myMeta;
         newMeta.reset();
         std::ofstream file(filename.c_str());
-        long long int bpos = 0;
+        long long bpos = 0;
         seek(0);
         getNext();
         while (thisPacket){
@@ -156,7 +158,7 @@ namespace Mist {
       
       DEBUG_MSG(DLVL_DONTEVEN,"Pre-While");
       
-      long long int activityCounter = Util::bootSecs();
+      long long activityCounter = Util::bootSecs();
       while ((Util::bootSecs() - activityCounter) < 10){//10 second timeout
         Util::wait(1000);
         removeUnused();
@@ -202,9 +204,9 @@ namespace Mist {
             bufferRemove(it->first, it2->first);
             pageCounter[it->first].erase(it2->first);
             for (int i = 0; i < 8192; i += 8){
-              unsigned int thisKeyNum = ntohl(((((long long int *)(metaPages[it->first].mapped + i))[0]) >> 32) & 0xFFFFFFFF);
+              unsigned int thisKeyNum = ntohl(((((long long *)(metaPages[it->first].mapped + i))[0]) >> 32) & 0xFFFFFFFF);
               if (thisKeyNum == it2->first){
-                (((long long int *)(metaPages[it->first].mapped + i))[0]) = 0;
+                (((long long *)(metaPages[it->first].mapped + i))[0]) = 0;
               }
             }
             change = true;

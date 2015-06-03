@@ -53,7 +53,7 @@ namespace Controller {
   /// \param err File descriptor of the stderr output of the process to monitor.
   void handleMsg(void * err){
     char buf[1024];
-    FILE * output = fdopen((long long int)err, "r");
+    FILE * output = fdopen((long long)err, "r");
     while (fgets(buf, 1024, output)){
       unsigned int i = 0;
       while (i < 9 && buf[i] != '|' && buf[i] != 0){
@@ -72,7 +72,7 @@ namespace Controller {
       }
     }
     fclose(output);
-    close((long long int)err);
+    close((long long)err);
   }
   
   /// Writes the current config to shared memory to be used in other processes

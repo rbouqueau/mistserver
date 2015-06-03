@@ -133,7 +133,7 @@ namespace Utils {
     return 0;
   }
 
-  long long int bitstream::getExpGolomb() {
+  long long bitstream::getExpGolomb() {
     long long unsigned int temp = golombGetter();
     return (temp >> 1) * (1 - ((temp & 1) << 1)); //Is actually return (temp / 2) * (1 - (temp & 1) * 2);
   }
@@ -142,7 +142,7 @@ namespace Utils {
     return golombGetter() - 1;
   }
 
-  long long int bitstream::peekExpGolomb() {
+  long long bitstream::peekExpGolomb() {
     long long unsigned int temp = golombPeeker();
     return (temp >> 1) * (1 - ((temp & 1) << 1)); //Is actually return (temp / 2) * (1 - (temp & 1) * 2);
   }

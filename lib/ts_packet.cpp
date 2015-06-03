@@ -30,7 +30,7 @@ namespace TS {
 /// \param Data The data to be read into the packet.
 /// \return true if it was possible to read in a full packet, false otherwise.
   bool Packet::FromFile(FILE * data) {    
-    long long int pos = ftell(data);
+    long long pos = ftell(data);
     if (!fread((void *)strBuf, 188, 1, data)) {
       return false;
     }
