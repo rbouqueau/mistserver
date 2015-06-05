@@ -196,3 +196,8 @@ getopt_long(int argc, char *const argv[],
 	}
 	return optopt;
 }
+
+char *optarg;
+int optind;
+int opterr;
+int optopt;
