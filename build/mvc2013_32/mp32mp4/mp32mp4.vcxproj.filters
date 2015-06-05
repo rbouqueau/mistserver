@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="mp4">
+      <UniqueIdentifier>{a194193e-3f19-4ac6-bcfe-256480883b4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mp3">
+      <UniqueIdentifier>{ae7b4e26-51f7-41e3-a3e0-ed595557d715}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\output\mist_out.cpp">
+      <Filter>mp4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\output\output.cpp">
+      <Filter>mp4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\output\output_http.cpp">
+      <Filter>mp4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\output\output_progressive_mp4.cpp">
+      <Filter>mp4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\input\mist_in.cpp">
+      <Filter>mp3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\input\input.cpp">
+      <Filter>mp3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\input\input_mp3.cpp">
+      <Filter>mp3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\io.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+</Project>
