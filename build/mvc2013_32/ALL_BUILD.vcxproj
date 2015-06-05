@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{EDACCDEC-A7AF-430D-BAB7-1F531BB24AF5}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:/Works/signals/old/mistserver_windows;C:/Works/signals/old/mistserver_windows/build/mvc2013_32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:/Works/signals/old/mistserver_windows;C:/Works/signals/old/mistserver_windows/build/mvc2013_32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:/Works/signals/old/mistserver_windows;C:/Works/signals/old/mistserver_windows/build/mvc2013_32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:/Works/signals/old/mistserver_windows;C:/Works/signals/old/mistserver_windows/build/mvc2013_32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/Works/signals/old/mistserver_windows/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/Works/signals/old/mistserver_windows -BC:/Works/signals/old/mistserver_windows/build/mvc2013_32 --check-stamp-file C:\Works\signals\old\mistserver_windows\build\mvc2013_32\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/Works/signals/old/mistserver_windows/CMakeLists.txt;C:\Works\signals\old\mistserver_windows\CMakeLists.txt;C:\Works\signals\old\mistserver_windows\build\mvc2013_32\CMakeFiles\2.8.12.1\CMakeSystem.cmake;C:\Works\signals\old\mistserver_windows\build\mvc2013_32\CMakeFiles\2.8.12.1\CMakeCCompiler.cmake;C:\Works\signals\old\mistserver_windows\build\mvc2013_32\CMakeFiles\2.8.12.1\CMakeCXXCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CMakeGenericSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\Platform\Windows.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\Platform\WindowsPaths.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CMakeCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\Platform\Windows-MSVC.cmake;C:\Works\signals\old\mistserver_windows\build\mvc2013_32\CMakeFiles\2.8.12.1\CMakeRCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CMakeRCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CMakeCXXInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\Platform\Windows-MSVC.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CTest.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CTestUseLaunchers.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CTestTargets.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\DartConfiguration.tcl.in;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\FindDoxygen.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CMakeParseArguments.cmake;C:\Works\signals\old\mistserver_windows\Doxyfile.in;C:\Works\signals\old\mistserver_windows\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Works\signals\old\mistserver_windows\build\mvc2013_32\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/Works/signals/old/mistserver_windows/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/Works/signals/old/mistserver_windows -BC:/Works/signals/old/mistserver_windows/build/mvc2013_32 --check-stamp-file C:\Works\signals\old\mistserver_windows\build\mvc2013_32\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/Works/signals/old/mistserver_windows/CMakeLists.txt;C:\Works\signals\old\mistserver_windows\CMakeLists.txt;C:\Works\signals\old\mistserver_windows\build\mvc2013_32\CMakeFiles\2.8.12.1\CMakeSystem.cmake;C:\Works\signals\old\mistserver_windows\build\mvc2013_32\CMakeFiles\2.8.12.1\CMakeCCompiler.cmake;C:\Works\signals\old\mistserver_windows\build\mvc2013_32\CMakeFiles\2.8.12.1\CMakeCXXCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CMakeGenericSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\Platform\Windows.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\Platform\WindowsPaths.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CMakeCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\Platform\Windows-MSVC.cmake;C:\Works\signals\old\mistserver_windows\build\mvc2013_32\CMakeFiles\2.8.12.1\CMakeRCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CMakeRCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CMakeCXXInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\Platform\Windows-MSVC.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CTest.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CTestUseLaunchers.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CTestTargets.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\DartConfiguration.tcl.in;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\FindDoxygen.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CMakeParseArguments.cmake;C:\Works\signals\old\mistserver_windows\Doxyfile.in;C:\Works\signals\old\mistserver_windows\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Works\signals\old\mistserver_windows\build\mvc2013_32\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule C:/Works/signals/old/mistserver_windows/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/Works/signals/old/mistserver_windows -BC:/Works/signals/old/mistserver_windows/build/mvc2013_32 --check-stamp-file C:\Works\signals\old\mistserver_windows\build\mvc2013_32\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/Works/signals/old/mistserver_windows/CMakeLists.txt;C:\Works\signals\old\mistserver_windows\CMakeLists.txt;C:\Works\signals\old\mistserver_windows\build\mvc2013_32\CMakeFiles\2.8.12.1\CMakeSystem.cmake;C:\Works\signals\old\mistserver_windows\build\mvc2013_32\CMakeFiles\2.8.12.1\CMakeCCompiler.cmake;C:\Works\signals\old\mistserver_windows\build\mvc2013_32\CMakeFiles\2.8.12.1\CMakeCXXCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CMakeGenericSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\Platform\Windows.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\Platform\WindowsPaths.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CMakeCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\Platform\Windows-MSVC.cmake;C:\Works\signals\old\mistserver_windows\build\mvc2013_32\CMakeFiles\2.8.12.1\CMakeRCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CMakeRCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CMakeCXXInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\Platform\Windows-MSVC.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CTest.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CTestUseLaunchers.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CTestTargets.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\DartConfiguration.tcl.in;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\FindDoxygen.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CMakeParseArguments.cmake;C:\Works\signals\old\mistserver_windows\Doxyfile.in;C:\Works\signals\old\mistserver_windows\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Works\signals\old\mistserver_windows\build\mvc2013_32\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/Works/signals/old/mistserver_windows/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/Works/signals/old/mistserver_windows -BC:/Works/signals/old/mistserver_windows/build/mvc2013_32 --check-stamp-file C:\Works\signals\old\mistserver_windows\build\mvc2013_32\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/Works/signals/old/mistserver_windows/CMakeLists.txt;C:\Works\signals\old\mistserver_windows\CMakeLists.txt;C:\Works\signals\old\mistserver_windows\build\mvc2013_32\CMakeFiles\2.8.12.1\CMakeSystem.cmake;C:\Works\signals\old\mistserver_windows\build\mvc2013_32\CMakeFiles\2.8.12.1\CMakeCCompiler.cmake;C:\Works\signals\old\mistserver_windows\build\mvc2013_32\CMakeFiles\2.8.12.1\CMakeCXXCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CMakeGenericSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\Platform\Windows.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\Platform\WindowsPaths.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CMakeCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\Platform\Windows-MSVC.cmake;C:\Works\signals\old\mistserver_windows\build\mvc2013_32\CMakeFiles\2.8.12.1\CMakeRCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CMakeRCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CMakeCXXInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\Platform\Windows-MSVC.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CTest.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CTestUseLaunchers.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CTestTargets.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\DartConfiguration.tcl.in;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\FindDoxygen.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-2.8\Modules\CMakeParseArguments.cmake;C:\Works\signals\old\mistserver_windows\Doxyfile.in;C:\Works\signals\old\mistserver_windows\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Works\signals\old\mistserver_windows\build\mvc2013_32\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="CMakeFiles\c732596491fe41082c020e93ee858726\ALL_BUILD.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Build all projects</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/Works/signals/old/mistserver_windows/build/mvc2013_32/CMakeFiles/c732596491fe41082c020e93ee858726/ALL_BUILD.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Works\signals\old\mistserver_windows\build\mvc2013_32\CMakeFiles\ALL_BUILD</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Build all projects</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/Works/signals/old/mistserver_windows/build/mvc2013_32/CMakeFiles/c732596491fe41082c020e93ee858726/ALL_BUILD.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Works\signals\old\mistserver_windows\build\mvc2013_32\CMakeFiles\ALL_BUILD</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Build all projects</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/Works/signals/old/mistserver_windows/build/mvc2013_32/CMakeFiles/c732596491fe41082c020e93ee858726/ALL_BUILD.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Works\signals\old\mistserver_windows\build\mvc2013_32\CMakeFiles\ALL_BUILD</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Build all projects</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/Works/signals/old/mistserver_windows/build/mvc2013_32/CMakeFiles/c732596491fe41082c020e93ee858726/ALL_BUILD.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Works\signals\old\mistserver_windows\build\mvc2013_32\CMakeFiles\ALL_BUILD</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMakeFiles\ALL_BUILD" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:/Works/signals/old/mistserver_windows/build/mvc2013_32/MistAnalyserAMF.vcxproj">
+      <Project>8F6783D1-3B6A-4B47-A49E-AB2C8BB5DB35</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Works/signals/old/mistserver_windows/build/mvc2013_32/MistAnalyserDTSC.vcxproj">
+      <Project>C7898F67-8495-46CF-9F30-73973C830E8E</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Works/signals/old/mistserver_windows/build/mvc2013_32/MistAnalyserFLV.vcxproj">
+      <Project>03D55045-6514-4AAC-ADA3-EFF79EB6A81E</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Works/signals/old/mistserver_windows/build/mvc2013_32/MistAnalyserMP4.vcxproj">
+      <Project>4E987B8A-1657-4CAB-8D90-CE1851DA9BD5</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Works/signals/old/mistserver_windows/build/mvc2013_32/MistAnalyserOGG.vcxproj">
+      <Project>8737CE56-F5BD-436F-BBDC-EA8E10782189</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Works/signals/old/mistserver_windows/build/mvc2013_32/MistAnalyserRTMP.vcxproj">
+      <Project>03226D7A-876A-43F0-9B72-A85272AFF4C0</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Works/signals/old/mistserver_windows/build/mvc2013_32/MistController.vcxproj">
+      <Project>A82AD760-3B59-4034-BD39-D4042C70B790</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Works/signals/old/mistserver_windows/build/mvc2013_32/MistInBuffer.vcxproj">
+      <Project>9E8C6657-3ECF-4CDA-A1AF-DAD10E76D369</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Works/signals/old/mistserver_windows/build/mvc2013_32/MistInDTSC.vcxproj">
+      <Project>9A428BC8-A845-42EB-962E-39BCAD5783B4</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Works/signals/old/mistserver_windows/build/mvc2013_32/MistInFLV.vcxproj">
+      <Project>B756C90A-7B55-48D8-9675-CBF8DE1D8EFF</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Works/signals/old/mistserver_windows/build/mvc2013_32/MistInMP3.vcxproj">
+      <Project>FF61B408-51F9-4D6E-8E56-3F051487C2B9</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Works/signals/old/mistserver_windows/build/mvc2013_32/MistInOGG.vcxproj">
+      <Project>E9B5B4B2-92C9-4337-8587-633479FD008A</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Works/signals/old/mistserver_windows/build/mvc2013_32/MistOutFLV.vcxproj">
+      <Project>BBF3D406-2884-429A-92A9-40349356F549</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Works/signals/old/mistserver_windows/build/mvc2013_32/MistOutHDS.vcxproj">
+      <Project>1C26383E-8497-441A-B320-AA2D28B12A41</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Works/signals/old/mistserver_windows/build/mvc2013_32/MistOutHLS.vcxproj">
+      <Project>DFBA1B15-8C55-41C5-A03A-4A24DC63ECA6</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Works/signals/old/mistserver_windows/build/mvc2013_32/MistOutHSS.vcxproj">
+      <Project>44CCA08D-DF78-48A3-AC30-DDA5C7DE3494</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Works/signals/old/mistserver_windows/build/mvc2013_32/MistOutHTTP.vcxproj">
+      <Project>049FA172-06EA-41BF-B914-3B0453322148</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Works/signals/old/mistserver_windows/build/mvc2013_32/MistOutHTTPTS.vcxproj">
+      <Project>F7B1EA27-66AA-4170-973A-7B1088070F7A</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Works/signals/old/mistserver_windows/build/mvc2013_32/MistOutJSON.vcxproj">
+      <Project>B005C417-4941-4B73-9025-376F332268B1</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Works/signals/old/mistserver_windows/build/mvc2013_32/MistOutMP3.vcxproj">
+      <Project>4AC562FF-AAF6-4CCC-9508-465A75726131</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Works/signals/old/mistserver_windows/build/mvc2013_32/MistOutMP4.vcxproj">
+      <Project>40188F5A-24C8-41FB-AA15-F7AC3EB9D7C7</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Works/signals/old/mistserver_windows/build/mvc2013_32/MistOutOGG.vcxproj">
+      <Project>DE39F359-66B1-4CC8-A89D-868A541B96B3</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Works/signals/old/mistserver_windows/build/mvc2013_32/MistOutRTMP.vcxproj">
+      <Project>5B7AD271-35CA-49A0-A4C6-3473FDF62837</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Works/signals/old/mistserver_windows/build/mvc2013_32/MistOutSRT.vcxproj">
+      <Project>DA95C2AD-1D68-48DD-A852-CA950AEF5E2C</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Works/signals/old/mistserver_windows/build/mvc2013_32/MistOutTS.vcxproj">
+      <Project>285A88C2-B358-49C3-86DC-E6A096FEC2AC</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Works/signals/old/mistserver_windows/build/mvc2013_32/ZERO_CHECK.vcxproj">
+      <Project>E6C07138-596A-4BC5-92E5-BDAE1E8D09A1</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Works/signals/old/mistserver_windows/build/mvc2013_32/mist.vcxproj">
+      <Project>E4AE6D65-54B4-4D9C-B8E3-206B59C250F4</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Works/signals/old/mistserver_windows/build/mvc2013_32/sourcery.vcxproj">
+      <Project>57272216-B41F-4FFF-93CD-4D809B5D4AE2</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
