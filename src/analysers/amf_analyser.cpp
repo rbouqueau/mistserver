@@ -6,8 +6,8 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <mist/amf.h>
-#include <mist/config.h>
+#include <lib/amf.h>
+#include <lib/config.h>
 
 ///\brief Holds everything unique to the analysers.
 namespace Analysers {
