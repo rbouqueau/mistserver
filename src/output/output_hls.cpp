@@ -1,6 +1,8 @@
 #include "output_hls.h"
 #include <lib/stream.h>
+#ifndef _MSC_VER
 #include <unistd.h>
+#endif
 
 namespace Mist {
   ///\brief Builds an index file for HTTP Live streaming.

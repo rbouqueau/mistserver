@@ -7,7 +7,9 @@
 #include <lib/http_parser.h>
 #include <lib/stream.h>
 #include <lib/checksum.h>
+#ifndef _MSC_VER
 #include <unistd.h>
+#endif
 
 ///\todo Maybe move to util?
 long long unsigned int binToInt(std::string & binary) {

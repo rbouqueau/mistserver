@@ -1,3 +1,4 @@
+#include <algorithm>
 #include "output_rtmp.h"
 #include <lib/http_parser.h>
 #include <lib/defines.h>
@@ -5,6 +6,10 @@
 #include <sys/stat.h>
 #include <cstring>
 #include <cstdlib>
+
+#ifdef _MSC_VER
+#define snprintf _snprintf
+#endif
 
 namespace Mist {
   OutRTMP::OutRTMP(Socket::Connection & conn) : Output(conn) {

@@ -10,6 +10,10 @@
 #include <fstream>
 #include <iterator>
 
+#ifdef _MSC_VER
+#define snprintf _snprintf
+#endif
+
 namespace Mist {
   Input * Input::singleton = NULL;
   

@@ -2,7 +2,9 @@
 #include <lib/defines.h>
 #include <lib/http_parser.h>
 #include <lib/stream.h>
+#ifndef _MSC_VER
 #include <unistd.h>
+#endif
 
 namespace Mist {
   OutHTTPTS::OutHTTPTS(Socket::Connection & conn) : TSOutput(conn) {}

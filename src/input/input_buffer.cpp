@@ -1,6 +1,7 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 
+#include <algorithm>
 #include <iostream>
 #include <cstring>
 #include <cerrno>
@@ -11,6 +12,10 @@
 #include <lib/defines.h>
 
 #include "input_buffer.h"
+
+#ifdef _MSC_VER
+#define snprintf _snprintf
+#endif
 
 #ifndef TIMEOUTMULTIPLIER
 #define TIMEOUTMULTIPLIER 10

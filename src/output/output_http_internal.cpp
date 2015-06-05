@@ -1,4 +1,7 @@
 #include <sys/stat.h>
+#ifdef _MSC_VER
+#include <io.h>
+#endif
 #include "output_http_internal.h"
 #include <lib/stream.h>
 
@@ -6,8 +9,13 @@ namespace Mist {
   OutHTTP::OutHTTP(Socket::Connection & conn) : HTTPOutput(conn){
     if (myConn.getPureSocket() >= 0){
       std::string host = myConn.getHost();
+#ifndef _MSC_VER
       dup2(myConn.getSocket(), STDIN_FILENO);
       dup2(myConn.getSocket(), STDOUT_FILENO);
+#else
+	  dup2(myConn.getSocket(), _fileno(stdin));
+	  dup2(myConn.getSocket(), _fileno(stdout));
+#endif
       myConn.drop();
       myConn = Socket::Connection(fileno(stdout),fileno(stdin) );
       myConn.setHost(host);

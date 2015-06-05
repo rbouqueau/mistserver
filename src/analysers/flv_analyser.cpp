@@ -9,7 +9,9 @@
 #include <cstdio>
 #include <string.h>
 #include <fstream>
+#ifndef _MSC_VER
 #include <unistd.h>
+#endif
 #include <signal.h>
 #include <lib/flv_tag.h> //FLV support
 #include <lib/config.h>

@@ -1,6 +1,8 @@
 #include "output_hds.h"
 #include <lib/stream.h>
+#ifndef _MSC_VER
 #include <unistd.h>
+#endif
 #include <lib/amf.h>
 #include <lib/mp4_adobe.h>
 

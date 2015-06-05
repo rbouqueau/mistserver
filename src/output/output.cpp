@@ -13,6 +13,10 @@
 #include <lib/timing.h>
 #include "output.h"
 
+#ifdef _MSC_VER
+#define snprintf _snprintf
+#endif
+
 namespace Mist {
   JSON::Value Output::capa = JSON::Value();
 

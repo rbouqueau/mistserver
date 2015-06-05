@@ -1,5 +1,9 @@
 #include "io.h"
 
+#ifdef _MSC_VER
+#define snprintf _snprintf
+#endif
+
 namespace Mist {
   Util::Config * InOutBase::config = NULL;
   ///Opens a shared memory page for the stream metadata.
