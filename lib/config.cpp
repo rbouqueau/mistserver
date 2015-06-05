@@ -31,8 +31,12 @@
 #ifndef _WIN32
 #include <sys/types.h>
 #include <unistd.h>
-#include <getopt.h>
 #include <dirent.h> //for getMyExec
+#endif
+#ifdef _MSC_VER
+#include "win32/getopt_long.h"
+#else
+#include <getopt.h>
 #endif
 #include <fcntl.h>
 #include <stdlib.h>
@@ -240,7 +244,7 @@ bool Util::Config::parseArgs(int & argc, char ** & argv) {
       }
       if (it->second.isMember("arg_num") && !(it->second.isMember("value") && it->second["value"].size())) {
         if (it->second["arg_num"].asInt() > arg_count) {
-          arg_count = it->second["arg_num"].asInt();
+          arg_count = (int)it->second["arg_num"].asInt();
         }
       }
     }
@@ -287,7 +291,7 @@ bool Util::Config::parseArgs(int & argc, char ** & argv) {
   if (long_i <= arg_count) {
     return false;
   }
-  printDebugLevel = getInteger("debug");
+  printDebugLevel = (unsigned)getInteger("debug");
   return true;
 }
 
@@ -389,7 +393,7 @@ int Util::Config::forkServer(Socket::Server & server_socket, int (*callback)(Soc
 int Util::Config::serveThreadedSocket(int (*callback)(Socket::Connection &)) {
   Socket::Server server_socket;
   if (vals.isMember("listen_port") && vals.isMember("listen_interface")) {
-    server_socket = Socket::Server(getInteger("listen_port"), getString("listen_interface"), false);
+    server_socket = Socket::Server((int)getInteger("listen_port"), getString("listen_interface"), false);
   }
   if (!server_socket.connected()) {
     DEBUG_MSG(DLVL_DEVEL, "Failure to open socket");
@@ -403,7 +407,7 @@ int Util::Config::serveThreadedSocket(int (*callback)(Socket::Connection &)) {
 int Util::Config::serveForkedSocket(int (*callback)(Socket::Connection & S)) {
   Socket::Server server_socket;
   if (vals.isMember("listen_port") && vals.isMember("listen_interface")) {
-    server_socket = Socket::Server(getInteger("listen_port"), getString("listen_interface"), false);
+    server_socket = Socket::Server((int)getInteger("listen_port"), getString("listen_interface"), false);
   }
   if (!server_socket.connected()) {
     DEBUG_MSG(DLVL_DEVEL, "Failure to open socket");
