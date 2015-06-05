@@ -2,9 +2,9 @@
 #include <iostream>
 #include <fstream>
 #include <algorithm>
-#include <mist/timing.h>
-#include <mist/shared_memory.h>
-#include <mist/defines.h>
+#include <lib/timing.h>
+#include <lib/shared_memory.h>
+#include <lib/defines.h>
 #include "controller_storage.h"
 #include "controller_capabilities.h"
 #include <time.h>

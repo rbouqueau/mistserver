@@ -1,5 +1,5 @@
 #include "output_http.h"
-#include <mist/http_parser.h>
+#include <lib/http_parser.h>
 
 namespace Mist {
   class OutHSS : public HTTPOutput {

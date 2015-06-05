@@ -1,8 +1,8 @@
-#include <mist/shared_memory.h>
-#include <mist/timing.h>
-#include <mist/defines.h>
-#include <mist/json.h>
-#include <mist/tinythread.h>
+#include <lib/shared_memory.h>
+#include <lib/timing.h>
+#include <lib/defines.h>
+#include <lib/json.h>
+#include <lib/tinythread.h>
 #include <string>
 #include <map>
 

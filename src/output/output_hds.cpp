@@ -1,8 +1,8 @@
 #include "output_hds.h"
-#include <mist/stream.h>
+#include <lib/stream.h>
 #include <unistd.h>
-#include <mist/amf.h>
-#include <mist/mp4_adobe.h>
+#include <lib/amf.h>
+#include <lib/mp4_adobe.h>
 
 namespace Mist {
   

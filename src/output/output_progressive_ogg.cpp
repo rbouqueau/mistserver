@@ -1,6 +1,6 @@
 #include "output_progressive_ogg.h"
-#include <mist/bitstream.h>
-#include <mist/defines.h>
+#include <lib/bitstream.h>
+#include <lib/defines.h>
 #include <algorithm>
 
 namespace Mist {

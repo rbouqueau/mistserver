@@ -2,8 +2,8 @@
 #include <string.h>
 #include <fstream>
 #include <set>
-#include <mist/config.h>
-#include <mist/procs.h>
+#include <lib/config.h>
+#include <lib/procs.h>
 #include "controller_capabilities.h"
 
 ///\brief Holds everything unique to the controller.

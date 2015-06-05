@@ -1,11 +1,11 @@
 #include <dirent.h> //for browse API call
 #include <sys/stat.h> //for browse API call
 #include <time.h>
-#include <mist/http_parser.h>
-#include <mist/auth.h>
-#include <mist/config.h>
-#include <mist/defines.h>
-#include <mist/timing.h>
+#include <lib/http_parser.h>
+#include <lib/auth.h>
+#include <lib/config.h>
+#include <lib/defines.h>
+#include <lib/timing.h>
 #include "controller_api.h"
 #include "controller_storage.h"
 #include "controller_streams.h"

@@ -1,6 +1,6 @@
 #include "input.h"
-#include <mist/dtsc.h>
-#include <mist/shared_memory.h>
+#include <lib/dtsc.h>
+#include <lib/shared_memory.h>
 
 namespace Mist {
   class inputBuffer : public Input {

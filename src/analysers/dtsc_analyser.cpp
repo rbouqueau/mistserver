@@ -5,10 +5,10 @@
 #include <iostream>
 #include <sstream>
 
-#include <mist/dtsc.h>
-#include <mist/json.h>
-#include <mist/config.h>
-#include <mist/defines.h>
+#include <lib/dtsc.h>
+#include <lib/json.h>
+#include <lib/config.h>
+#include <lib/defines.h>
 
 ///\brief Holds everything unique to the analysers.  
 namespace Analysers {

@@ -1,5 +1,5 @@
 #include "input.h"
-#include <mist/dtsc.h>
+#include <lib/dtsc.h>
 
 namespace Mist {
   class inputFLV : public Input {

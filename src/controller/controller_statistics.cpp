@@ -1,5 +1,5 @@
 #include <cstdio>
-#include <mist/config.h>
+#include <lib/config.h>
 #include "controller_statistics.h"
 
 // These are used to store "clients" field requests in a bitfield for speedup.

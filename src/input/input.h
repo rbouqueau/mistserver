@@ -1,11 +1,11 @@
 #include <set>
 #include <map>
 #include <cstdlib>
-#include <mist/config.h>
-#include <mist/json.h>
-#include <mist/timing.h>
-#include <mist/dtsc.h>
-#include <mist/shared_memory.h>
+#include <lib/config.h>
+#include <lib/json.h>
+#include <lib/timing.h>
+#include <lib/dtsc.h>
+#include <lib/shared_memory.h>
 
 #include "../io.h"
 

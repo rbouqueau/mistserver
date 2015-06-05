@@ -5,10 +5,10 @@
 #include <cstdlib>
 #include <cstdio>
 #include <string>
-#include <mist/stream.h>
-#include <mist/ogg.h>
-#include <mist/defines.h>
-#include <mist/bitstream.h>
+#include <lib/stream.h>
+#include <lib/ogg.h>
+#include <lib/defines.h>
+#include <lib/bitstream.h>
 #include "input_ogg.h"
 
 ///\todo Whar be Opus support?

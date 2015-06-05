@@ -11,8 +11,8 @@
 #include <fstream>
 #include <unistd.h>
 #include <signal.h>
-#include <mist/flv_tag.h> //FLV support
-#include <mist/config.h>
+#include <lib/flv_tag.h> //FLV support
+#include <lib/config.h>
 
 ///Debugging tool for FLV data.
 /// Expects FLV data through stdin, outputs human-readable information to stderr.

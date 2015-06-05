@@ -1,6 +1,6 @@
 #include "output_http.h"
-#include <mist/ogg.h>
-#include <mist/http_parser.h>
+#include <lib/ogg.h>
+#include <lib/http_parser.h>
 
 namespace Mist {
   class OutProgressiveOGG : public HTTPOutput {

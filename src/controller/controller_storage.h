@@ -1,7 +1,7 @@
 #include <string>
-#include <mist/json.h>
-#include <mist/config.h>
-#include <mist/tinythread.h>
+#include <lib/json.h>
+#include <lib/config.h>
+#include <lib/tinythread.h>
 
 namespace Controller {
   extern Util::Config conf;///< Global storage of configuration.

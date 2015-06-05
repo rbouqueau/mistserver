@@ -2,12 +2,12 @@
 #include <string> 
 #include <cstring>   // strcpy
 #include <sys/stat.h> //stat
-#include <mist/json.h>
-#include <mist/config.h>
-#include <mist/procs.h>
-#include <mist/timing.h>
-#include <mist/tinythread.h>
-#include <mist/defines.h>
+#include <lib/json.h>
+#include <lib/config.h>
+#include <lib/procs.h>
+#include <lib/timing.h>
+#include <lib/tinythread.h>
+#include <lib/defines.h>
 #include "controller_storage.h"
 #include "controller_connectors.h"
 

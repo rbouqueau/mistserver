@@ -1,6 +1,6 @@
 #pragma once
-#include <mist/defines.h>
-#include <mist/http_parser.h>
+#include <lib/defines.h>
+#include <lib/http_parser.h>
 #include "output.h"
 
 namespace Mist {

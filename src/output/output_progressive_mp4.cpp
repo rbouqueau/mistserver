@@ -1,8 +1,8 @@
 #include "output_progressive_mp4.h"
-#include <mist/defines.h>
-#include <mist/mp4.h>
-#include <mist/mp4_generic.h>
-#include <mist/checksum.h>
+#include <lib/defines.h>
+#include <lib/mp4.h>
+#include <lib/mp4_generic.h>
+#include <lib/checksum.h>
 
 namespace Mist {
   OutProgressiveMP4::OutProgressiveMP4(Socket::Connection & conn) : HTTPOutput(conn){}

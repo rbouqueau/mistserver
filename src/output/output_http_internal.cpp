@@ -1,6 +1,6 @@
 #include <sys/stat.h>
 #include "output_http_internal.h"
-#include <mist/stream.h>
+#include <lib/stream.h>
 
 namespace Mist {
   OutHTTP::OutHTTP(Socket::Connection & conn) : HTTPOutput(conn){

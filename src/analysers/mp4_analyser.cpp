@@ -7,8 +7,8 @@
 #include <fstream>
 #include <string>
 #include <string.h>
-#include <mist/mp4.h>
-#include <mist/config.h>
+#include <lib/mp4.h>
+#include <lib/config.h>
 
 ///\brief Holds everything unique to the analysers.
 namespace Analysers {

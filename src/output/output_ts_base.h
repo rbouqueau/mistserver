@@ -1,8 +1,8 @@
-#include <mist/defines.h>
+#include <lib/defines.h>
 #include "output.h"
 #include "output_http.h"
-#include <mist/mp4_generic.h>
-#include <mist/ts_packet.h>
+#include <lib/mp4_generic.h>
+#include <lib/ts_packet.h>
 
 #ifndef TS_BASECLASS
 #define TS_BASECLASS Output

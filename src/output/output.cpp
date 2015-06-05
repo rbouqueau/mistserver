@@ -7,10 +7,10 @@
 #endif
 #include <iterator> //std::distance
 
-#include <mist/stream.h>
-#include <mist/defines.h>
-#include <mist/http_parser.h>
-#include <mist/timing.h>
+#include <lib/stream.h>
+#include <lib/defines.h>
+#include <lib/http_parser.h>
+#include <lib/timing.h>
 #include "output.h"
 
 namespace Mist {

@@ -7,8 +7,8 @@
 #include <cstdlib>
 #include <cstdio>
 #include <string>
-#include <mist/stream.h>
-#include <mist/defines.h>
+#include <lib/stream.h>
+#include <lib/defines.h>
 
 #include "input_buffer.h"
 

@@ -9,8 +9,8 @@
 #endif
 
 #include INPUTTYPE 
-#include <mist/config.h>
-#include <mist/defines.h>
+#include <lib/config.h>
+#include <lib/defines.h>
 
 int main(int argc, char * argv[]) {
   Util::Config conf(argv[0], PACKAGE_VERSION);

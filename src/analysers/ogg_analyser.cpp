@@ -5,9 +5,9 @@
 #include <string>
 #include <map>
 #include <string.h>
-#include <mist/ogg.h>
-#include <mist/config.h>
-#include <mist/theora.h>
+#include <lib/ogg.h>
+#include <lib/config.h>
+#include <lib/theora.h>
 ///\todo rewrite this analyser.
 namespace Analysers {
   std::string Opus_prettyPacket(const char * part, int len){

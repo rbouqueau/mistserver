@@ -1,10 +1,10 @@
-#include <mist/procs.h>
-#include <mist/config.h>
-#include <mist/timing.h>
-#include <mist/stream.h>
-#include <mist/dtsc.h>
-#include <mist/defines.h>
-#include <mist/shared_memory.h>
+#include <lib/procs.h>
+#include <lib/config.h>
+#include <lib/timing.h>
+#include <lib/stream.h>
+#include <lib/dtsc.h>
+#include <lib/defines.h>
+#include <lib/shared_memory.h>
 #include "controller_streams.h"
 #include "controller_capabilities.h"
 #include "controller_storage.h"

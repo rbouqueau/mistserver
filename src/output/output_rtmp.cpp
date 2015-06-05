@@ -1,7 +1,7 @@
 #include "output_rtmp.h"
-#include <mist/http_parser.h>
-#include <mist/defines.h>
-#include <mist/stream.h>
+#include <lib/http_parser.h>
+#include <lib/defines.h>
+#include <lib/stream.h>
 #include <sys/stat.h>
 #include <cstring>
 #include <cstdlib>

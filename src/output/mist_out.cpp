@@ -1,6 +1,6 @@
 #include OUTPUTTYPE
-#include <mist/config.h>
-#include <mist/socket.h>
+#include <lib/config.h>
+#include <lib/socket.h>
 
 int spawnForked(Socket::Connection & S){
   mistOut tmp(S);

@@ -1,7 +1,7 @@
 #include "output_srt.h"
-#include <mist/http_parser.h>
-#include <mist/defines.h>
-#include <mist/checksum.h>
+#include <lib/http_parser.h>
+#include <lib/defines.h>
+#include <lib/checksum.h>
 #include <iomanip>
 
 namespace Mist {

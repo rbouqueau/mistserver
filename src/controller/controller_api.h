@@ -1,5 +1,5 @@
-#include <mist/socket.h>
-#include <mist/json.h>
+#include <lib/socket.h>
+#include <lib/json.h>
 
 namespace Controller {
   void checkConfig(JSON::Value & in, JSON::Value & out);

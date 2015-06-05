@@ -1,7 +1,7 @@
 #include "output_http.h"
-#include <mist/ts_packet.h>
-#include <mist/mp4.h>
-#include <mist/mp4_generic.h>
+#include <lib/ts_packet.h>
+#include <lib/mp4.h>
+#include <lib/mp4_generic.h>
 
 namespace Mist {
   class OutHDS : public HTTPOutput {

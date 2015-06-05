@@ -1,4 +1,4 @@
-#include <mist/json.h>
+#include <lib/json.h>
 
 namespace Controller {
   extern JSON::Value capabilities; ///< Global storage of capabilities

@@ -1,7 +1,7 @@
 #include "output_httpts.h"
-#include <mist/defines.h>
-#include <mist/http_parser.h>
-#include <mist/stream.h>
+#include <lib/defines.h>
+#include <lib/http_parser.h>
+#include <lib/stream.h>
 #include <unistd.h>
 
 namespace Mist {

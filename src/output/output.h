@@ -2,13 +2,13 @@
 #include <set>
 #include <cstdlib>
 #include <map>
-#include <mist/config.h>
-#include <mist/json.h>
-#include <mist/flv_tag.h>
-#include <mist/timing.h>
-#include <mist/dtsc.h>
-#include <mist/socket.h>
-#include <mist/shared_memory.h>
+#include <lib/config.h>
+#include <lib/json.h>
+#include <lib/flv_tag.h>
+#include <lib/timing.h>
+#include <lib/dtsc.h>
+#include <lib/socket.h>
+#include <lib/shared_memory.h>
 #include "../io.h"
 
 namespace Mist {

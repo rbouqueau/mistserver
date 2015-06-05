@@ -1,6 +1,6 @@
 #include "input.h"
-#include <mist/dtsc.h>
-#include <mist/ogg.h>
+#include <lib/dtsc.h>
+#include <lib/ogg.h>
 
 namespace Mist {
 

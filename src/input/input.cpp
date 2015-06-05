@@ -4,7 +4,7 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 
-#include <mist/defines.h>
+#include <lib/defines.h>
 #include "input.h"
 #include <sstream>
 #include <fstream>

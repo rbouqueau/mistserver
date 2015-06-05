@@ -1,7 +1,7 @@
 #include "output.h"
-#include <mist/flv_tag.h>
-#include <mist/amf.h>
-#include <mist/rtmpchunks.h>
+#include <lib/flv_tag.h>
+#include <lib/amf.h>
+#include <lib/rtmpchunks.h>
 
 
 namespace Mist {

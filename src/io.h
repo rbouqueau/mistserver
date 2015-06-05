@@ -2,9 +2,9 @@
 
 #include <map>
 #include <deque>
-#include <mist/shared_memory.h>
-#include <mist/defines.h>
-#include <mist/dtsc.h>
+#include <lib/shared_memory.h>
+#include <lib/defines.h>
+#include <lib/dtsc.h>
 
 namespace Mist {
   enum negotiationState {

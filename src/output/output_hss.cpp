@@ -1,12 +1,12 @@
 #include "output_hss.h"
-#include <mist/defines.h>
-#include <mist/mp4.h>
-#include <mist/mp4_ms.h>
-#include <mist/mp4_generic.h>
-#include <mist/base64.h>
-#include <mist/http_parser.h>
-#include <mist/stream.h>
-#include <mist/checksum.h>
+#include <lib/defines.h>
+#include <lib/mp4.h>
+#include <lib/mp4_ms.h>
+#include <lib/mp4_generic.h>
+#include <lib/base64.h>
+#include <lib/http_parser.h>
+#include <lib/stream.h>
+#include <lib/checksum.h>
 #include <unistd.h>
 
 ///\todo Maybe move to util?

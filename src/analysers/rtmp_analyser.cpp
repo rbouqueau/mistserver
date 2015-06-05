@@ -6,11 +6,11 @@
 
 #include <cstdlib>
 
-#include <mist/flv_tag.h>
-#include <mist/amf.h>
-#include <mist/rtmpchunks.h>
-#include <mist/config.h>
-#include <mist/socket.h>
+#include <lib/flv_tag.h>
+#include <lib/amf.h>
+#include <lib/rtmpchunks.h>
+#include <lib/config.h>
+#include <lib/socket.h>
 
 #define DETAIL_RECONSTRUCT 1
 #define DETAIL_EXPLICIT 2

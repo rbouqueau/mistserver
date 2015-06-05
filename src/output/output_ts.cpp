@@ -1,6 +1,6 @@
 #include "output_ts.h"
-#include <mist/http_parser.h>
-#include <mist/defines.h>
+#include <lib/http_parser.h>
+#include <lib/defines.h>
 
 namespace Mist {
   OutTS::OutTS(Socket::Connection & conn) : TSOutput(conn){

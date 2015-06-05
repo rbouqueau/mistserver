@@ -1,7 +1,7 @@
 #include <sys/stat.h>
 #include "output_http.h"
-#include <mist/stream.h>
-#include <mist/checksum.h>
+#include <lib/stream.h>
+#include <lib/checksum.h>
 
 namespace Mist {
   HTTPOutput::HTTPOutput(Socket::Connection & conn) : Output(conn) {
