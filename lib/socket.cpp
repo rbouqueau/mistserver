@@ -404,7 +404,11 @@ Socket::Connection::Connection(std::string host, int port, bool nonblock) {
       break;
     }
     remotehost += strerror(errno);
+#ifndef _MSC_VER
     ::close(sock);
+#else
+	closesocket(sock);
+#endif
   }
   freeaddrinfo(result);
 
@@ -429,7 +433,7 @@ bool Socket::Connection::connected() const {
 
 /// Returns the time this socket has been connected.
 unsigned int Socket::Connection::connTime() {
-  return conntime;
+	return (unsigned)conntime;
 }
 
 /// Returns total amount of bytes sent.
@@ -445,7 +449,7 @@ unsigned int Socket::Connection::dataDown() {
 /// Returns a std::string of stats, ended by a newline.
 /// Requires the current connector name as an argument.
 std::string Socket::Connection::getStats(std::string C) {
-  return "S " + getHost() + " " + C + " " + uint2string(Util::epoch() - conntime) + " " + uint2string(up) + " " + uint2string(down) + "\n";
+  return "S " + getHost() + " " + C + " " + uint2string((unsigned)(Util::epoch() - conntime)) + " " + uint2string(up) + " " + uint2string(down) + "\n";
 }
 
 /// Updates the downbuffer internal variable.
@@ -1034,7 +1038,13 @@ Socket::UDPConnection::UDPConnection(const UDPConnection & o) {
 Socket::UDPConnection::~UDPConnection() {
   if (sock != -1) {
     errno = EINTR;
-    while (::close(sock) != 0 && errno == EINTR) {
+    while (
+#ifndef _MSC_VER
+		::close(sock)
+#else
+		closesocket(sock)
+#endif		
+		!= 0 && errno == EINTR) {
     }
     sock = -1;
   }

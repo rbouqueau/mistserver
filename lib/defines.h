@@ -16,6 +16,10 @@
 #define DLVL_DONTEVEN 10 // All messages enabled, even pointless ones.
 #if DEBUG > -1
 
+#ifndef S_IRWXU
+#define S_IRWXU 0
+#endif
+
 #ifndef ACCESSPERMS
 #define ACCESSPERMS S_IRWXU 
 #endif
