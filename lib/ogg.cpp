@@ -164,7 +164,7 @@ namespace OGG {
         segments.push_back(std::string(thisSeg, *it));
         free(thisSeg);
       }else{
-        segments.push_back(std::string("", 0));
+        segments.push_back(std::string());
       }
 
     }
