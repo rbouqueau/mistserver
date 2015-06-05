@@ -24,6 +24,11 @@
 #define ACCESSPERMS S_IRWXU 
 #endif
 
+#ifdef _MSC_VER
+#define snprintf _snprintf
+#define getpid _getpid
+#endif
+
 #include <stdio.h>
 #ifndef _WIN32
 #include <unistd.h>

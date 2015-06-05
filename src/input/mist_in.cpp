@@ -12,7 +12,11 @@
 #include <lib/config.h>
 #include <lib/defines.h>
 
+#ifdef NOT_MAIN
+int input(int argc, char * argv[]) {
+#else
 int main(int argc, char * argv[]) {
+#endif
   Util::Config conf(argv[0], PACKAGE_VERSION);
   mistIn conv(&conf);
   if (conf.parseArgs(argc, argv)) {

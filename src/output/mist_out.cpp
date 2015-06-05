@@ -2,12 +2,21 @@
 #include <lib/config.h>
 #include <lib/socket.h>
 
+#ifdef _MSC_VER
+#define snprintf _snprintf
+#define getpid _getpid
+#endif
+
 int spawnForked(Socket::Connection & S){
   mistOut tmp(S);
   return tmp.run();
 }
 
+#ifdef NOT_MAIN
+int output(int argc, char * argv[]) {
+#else
 int main(int argc, char * argv[]) {
+#endif
   Util::Config conf(argv[0], PACKAGE_VERSION);
   mistOut::init(&conf);
   if (conf.parseArgs(argc, argv)) {

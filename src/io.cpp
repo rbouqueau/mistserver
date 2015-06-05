@@ -2,6 +2,7 @@
 
 #ifdef _MSC_VER
 #define snprintf _snprintf
+#define getpid _getpid
 #endif
 
 namespace Mist {

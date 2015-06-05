@@ -4,6 +4,11 @@
 #include <lib/mp4_generic.h>
 #include <lib/checksum.h>
 
+#ifdef _MSC_VER
+#define snprintf _snprintf
+#define getpid _getpid
+#endif
+
 namespace Mist {
   OutProgressiveMP4::OutProgressiveMP4(Socket::Connection & conn) : HTTPOutput(conn){}
   OutProgressiveMP4::~OutProgressiveMP4() {}

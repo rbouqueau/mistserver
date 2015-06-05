@@ -124,7 +124,7 @@ void Util::sleep(int ms) {
   //struct timeval T;
   //T.tv_sec = ms / 1000;
   //T.tv_usec = 1000 * (ms % 1000);
-  sleep(ms);
+  Sleep(ms);
 #else
   struct timespec T;
   T.tv_sec = ms / 1000;

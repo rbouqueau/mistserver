@@ -15,6 +15,7 @@
 
 #ifdef _MSC_VER
 #define snprintf _snprintf
+#define getpid _getpid
 #endif
 
 namespace Mist {
@@ -101,11 +102,13 @@ namespace Mist {
     if (streamName.size() < 1){
       return; //abort - no stream to initialize...
     }
+#if 0 //Romain
     if (!Util::startInput(streamName)){
       DEBUG_MSG(DLVL_FAIL, "Opening stream disallowed - aborting initalization");
       onFail();
       return;
     }
+#endif
     isInitialized = true;
     char pageId[NAME_BUFFER_SIZE];
     snprintf(pageId, NAME_BUFFER_SIZE, SHM_STREAM_INDEX, streamName.c_str());

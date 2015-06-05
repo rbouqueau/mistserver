@@ -3,6 +3,11 @@
 #include <lib/stream.h>
 #include <lib/checksum.h>
 
+#ifdef _MSC_VER
+#define snprintf _snprintf
+#define getpid _getpid
+#endif
+
 namespace Mist {
   HTTPOutput::HTTPOutput(Socket::Connection & conn) : Output(conn) {
     if (config->getString("ip").size()){
